@@ -1,0 +1,84 @@
+<div class="container my-5 transparente">
+    <div class="row align-items-center">
+        <div class="col-lg-6 col-md-12 p-4">
+            <h2 class="display-5 fw-bold">Bienvenido!</h2>
+            <p class="lead">
+                La siguiente aplicacion demuestra lo aprendido respecto a pais, paginas dinamicas y localStorage.
+                Para el desarrollo de la pagina se utilizo <strong>JavaScript</strong>, <strong>getUserMedia</strong> y
+                la <strong>API de Geolocalización</strong>.
+                Mientras que los datos se almacenan de forma local mediante <strong>localStorage</strong>.
+            </p>
+            <ul class="list fs-5">
+                <li><i class="fas fa-users"></i> Nombre, Edad y Departamento</li>
+                <li><i class="fas fa-video"></i> Foto tomada con la cámara del navegador</li>
+                <li><i class="fas fa-compass"></i> Ubicación geográfica mediante GPS del navegador</li>
+                <li><i class="fas fa-cloud-arrow-up"></i> Almacenamiento de datos en localStorage</li>
+                <li><i class="fas fa-flag"></i> Pagina web dinamica</li>
+            </ul>
+        </div>
+        <div class="col-lg-6 col-md-12 text-center">
+            <video width="100%" class="rounded shadow" autoplay>
+                <source src="media/ibai.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </div>
+
+    </div>
+</div>
+<hr class="w-100 border-top border-1 border-white">
+    <div class="row transparente">
+        <div class="col-lg-8 col-sm-12  p-4 d-flex flex-column position-static">
+
+            <h3 class="mb-0">Resultado</h3>
+
+            <p class="card-text mb-auto">Aqui unos pequeños pantallazos de los resultados obtenidos en la pagina a modo de vista previa.
+            </p>
+
+        </div>
+
+        <div class="col-lg-4  d-none d-lg-block">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" style="max-height: 500px;">
+                        <img src="media/ej1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" style="max-height: 500px;">
+                        <img src="media/ej2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" style="max-height: 500px;">
+                        <img src="media/ej3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+        </div>
+
+
+
+    </div>
+<hr class="w-100 border-top border-1 border-white">
+<div class="container transparente">
+    <h3>Deja tu comentario</h3>
+    <br>
+    <textarea class="form-control" id="Comentario"
+        placeholder="Toca el botón para transcribir tu comentario :D"></textarea><br>
+    <button id="Grabador">🎤 Iniciar Transcripción</button>
+</div>

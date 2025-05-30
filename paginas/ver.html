@@ -1,0 +1,53 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url("media/fondo5.png");
+        /* Reemplaza con tu fondo real */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+</style>
+<div class="container px-4 py-5 transparente text-center">
+    <h2 class="pb-2 border-bottom">¡Tu perfil generado!</h2>
+
+    <div class="row justify-content-center py-4">
+        <div class="col-md-4 mb-3">
+            <img id="imagenPerfil"  alt="Foto Guardada"
+                class="img-fluid rounded border border-dark" width="320" height="240">
+        </div>
+
+        <div class="col-md-6 text-start">
+            <div class="mb-3">
+                <button class="btn btn-outline-primary" disabled>Nombre</button>
+                <h2 id="nombre_C" class="fw-bold d-inline ms-2"></h2>
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-outline-warning" disabled>Apellido</button>
+                <h2 id="apellido_C" class="fw-bold d-inline ms-2"></h2>
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-outline-secondary" disabled>Edad</button>
+                <h2 id="edad_C" class="fw-bold d-inline ms-2 text-white"></h2>
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-outline-danger" disabled>Correo</button>
+                <h4 id="correo_C" class="fw-bold d-inline ms-2 text-white"></h4>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="mt-5">¡Tu residencia!</h3>
+    <div id="map" style="height: 300px;"></div>
+
+    <div class="d-flex justify-content-center gap-2 py-4">
+        <button onclick="cargarPaginas('principal')" type="button" class="btn btn-warning">Volver</button>
+        <button onclick="eliminarUser_C()" type="button" class="btn btn-danger">Eliminar</button>
+    </div>
+</div>
