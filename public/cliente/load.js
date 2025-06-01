@@ -19,7 +19,7 @@ function inicializarTooltips() {
 function generarQRPerfil() {
   const perfilURL = window.location.href;
 
-  const screenshotURL = `https://api.screenshotmachine.com?key=a317fe&url=https%3A%2F%2Fproyecto-p1-sage.vercel.app%2F%23&dimension=1024x768`;
+  const screenshotURL = `https://api.screenshotmachine.com?key=a317fe&url=https%3A%2F%2Fproyecto-p1-sage.vercel.app%2F%23&dimension=1024xfull`;
 
   const qrURL = `http://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(
     screenshotURL
