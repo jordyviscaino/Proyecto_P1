@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil con Personalización (Estilos Generados en Script)</title>
+  <!-- Se incluye Bootstrap para estilos básicos (opcional) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Se establecen estilos por defecto a través de clases */
+    .perfilImagen {
+      width: 320px;
+      height: 240px;
+      /* Borde por defecto: estos se actualizarán desde el script */
+      border: 5px solid #007bff;
+    }
+    .perfilTitulo {
+      /* Color por defecto, que se modificará desde el script */
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-4">
+    <div class="row">
+      <!-- Sección de la imagen de perfil -->
+      <div class="col-md-4">
+        <img class="perfilImagen rounded img-fluid" src="https://via.placeholder.com/320x240" alt="Foto de Perfil">
+      </div>
+      <!-- Sección de datos del perfil -->
+      <div class="col-md-8">
+        <h3 class="perfilTitulo">Bienvenido a tu perfil:</h3>
+        <h3 class="fw-bold d-inline ms-2">Juan</h3>
+        <h3 class="fw-bold d-inline ms-2">Pérez</h3>
+        <!-- Sección para cambiar el color -->
+        <div class="mt-3">
+          <label for="miColorSelector">Selecciona el color</label>
+          <input type="color" id="miColorSelector" value="#007bff">
+          <button class="btn btn-primary btn-sm ms-2" id="miBtnAceptar">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Script para actualizar el estilo sin depender de IDs en la imagen y el texto -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Se seleccionan los elementos por sus clases (para imagen y texto)
+      var imagenPerfil = document.querySelector('.perfilImagen');
+      var textoBienvenida = document.querySelector('.perfilTitulo');
+      
+      // Se usan ids para el input de color y el botón (más sencillo para manipulación de eventos)
+      var colorInput = document.getElementById('miColorSelector');
+      var btnAceptar = document.getElementById('miBtnAceptar');
+      
+      // Función para aplicar la personalización directamente en el estilo de los elementos
+      function actualizarEstilos(color) {
+        // Se genera el borde completo y se cambia el color del texto
+        imagenPerfil.style.border = "5px solid " + color;
+        textoBienvenida.style.color = color;
+      }
+      
+      // Al cargar, se revisa si hay un color guardado en localStorage
+      var colorGuardado = localStorage.getItem('perfilColor');
+      if (colorGuardado) {
+        actualizarEstilos(colorGuardado);
+        // Actualiza el valor del selector para reflejar el color guardado
+        colorInput.value = colorGuardado;
+      }
+      
+      // Al hacer clic en "Aceptar", se guarda el color elegido y se actualizan los estilos
+      btnAceptar.addEventListener('click', function() {
+        var nuevoColor = colorInput.value;
+        localStorage.setItem('perfilColor', nuevoColor);
+        actualizarEstilos(nuevoColor);
+      });
+    });
+  </script>
+</body>
+</html>

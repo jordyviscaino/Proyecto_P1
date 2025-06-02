@@ -1,0 +1,134 @@
+<!-- Mini-perfil -->
+ <style>
+    /* Establecemos estilos por defecto usando clases (los estilos se actualizarán en el script) */
+    .perfilImagen {
+      width: 320px;
+      height: 240px;
+      border: 5px solid #007bff; /* color por defecto */
+    }
+    .perfilTitulo {
+      color: #007bff; /* color por defecto del texto de bienvenida */
+    }
+  </style>
+<div class="container row transparente">
+  <br>
+  <div class="col-sm-8 col-md-8 col-lg-8 container-fluid">
+    <div class="row">
+      <!-- Columna de la imagen -->
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        <!-- Se asigna la clase .perfilImagen; se elimina border-dark para evitar conflictos -->
+        <img id="imagenPerfil" alt="Foto Guardada" class="img-fluid rounded perfilImagen" src="">
+      </div>
+      <!-- Columna de los datos del perfil -->
+      <div class="col-sm-12 col-md-9 col-lg-9">
+        <div class="mb-3">
+          <!-- Texto de bienvenida usando la clase .perfilTitulo -->
+          <h3 id="bienvenidoText" class="perfilTitulo">Bienvenido a tu perfil:</h3>
+          <h3 id="nombre_C" class="fw-bold d-inline ms-2"></h3>
+          <h3 id="apellido_C" class="fw-bold d-inline ms-2"></h3>
+        </div>
+        <!-- Datos adicionales (edad, correo, carrera) -->
+        <p id="edadPerfil" class="mb-1"></p>
+        <p id="correoPerfil" class="mb-1"></p>
+        <p id="carreraPerfil" class="mb-1"></p>
+        
+        <!-- Botón para mostrar “Sobre mi” mediante modal -->
+        <button type="button" class="btn btn-link" onclick="cargarDescripcionModal()" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Sobre mi
+        </button>
+        
+        <!-- Sección para la selección de color -->
+        <div class="mt-3">
+          <label for="colorSelector">Personalizar color (borde y texto): </label>
+          <input type="color" id="colorSelector" value="#007bff">
+          <button type="button" id="btnAceptarColor" class="btn btn-primary btn-sm ms-2">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Columna de redes y compartir perfil -->
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <div class="d-flex justify-content-center">
+      <div id="redesSociales" class="mt-3 text-start"></div>
+      <br>
+      <button type="button" class="btn btn-white text-primary" data-bs-toggle="modal" data-bs-target="#modalQR">
+        📷 Compartir perfil
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal "Sobre mi" -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" data-bs-keyboard="false" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-primary" id="exampleModalLabel">Ver más..</h1>
+      </div>
+      <div class="modal-body">
+        <p class="lead my-3 text-dark" id="about">
+          Aquí va una descripción extendida sobre el perfil.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal QR -->
+<div class="modal fade" id="modalQR" tabindex="-1" aria-labelledby="modalQRLabel" data-bs-keyboard="false" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-primary" id="modalQRLabel">Compartir perfil</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p class="lead my-3 text-dark">Escanea el código QR para ver el perfil.</p>
+        <img id="qrImage" src="https://via.placeholder.com/200" alt="Código QR" class="img-fluid">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS Bundle con Popper (requerido para el funcionamiento de modales) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script de personalización -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Para el selector y botón se usan IDs
+    var colorInput = document.getElementById('colorSelector');
+    var btnAceptar = document.getElementById('btnAceptarColor');
+
+    // Se seleccionan los elementos a personalizar mediante sus clases
+    var imagenPerfil = document.querySelector('.perfilImagen');
+    var textoBienvenida = document.querySelector('.perfilTitulo');
+
+    // Función que actualiza directamente el borde de la imagen y el color del texto
+    function actualizarPersonalizacion(color) {
+      imagenPerfil.style.border = "5px solid " + color;
+      textoBienvenida.style.color = color;
+    }
+
+    // Si hay un color guardado en localStorage, se aplica y se actualiza el selector
+    var guardadoColor = localStorage.getItem('perfilColor');
+    if (guardadoColor) {
+      actualizarPersonalizacion(guardadoColor);
+      colorInput.value = guardadoColor;
+    }
+
+    // Al hacer clic en "Aceptar", se guarda el color y se actualizan los estilos
+    btnAceptar.addEventListener('click', function() {
+      var nuevoColor = colorInput.value;
+      localStorage.setItem('perfilColor', nuevoColor);
+      actualizarPersonalizacion(nuevoColor);
+    });
+  });
+</script>

@@ -1,0 +1,34 @@
+<title>Galeria</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url("media/fondo2.jpg");
+    /* Reemplaza con tu fondo real */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+</style>
+
+
+
+<body>
+
+  <div class="transparente">
+    <h1>Bienvenido a mi galeria</h1>
+    <input type="file" id="fileInput" accept="image/*" class="form-control mb-2">
+    <button id="subirImagen" class="btn btn-primary">Subir</button>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4" id="galeriaUsuario">
+
+  </div>
+
+
+
+
+  <div id="alertContainer" class="position-fixed top-0 start-50 translate-middle-x w-50 mt-3"></div>
+

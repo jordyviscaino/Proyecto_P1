@@ -1,0 +1,63 @@
+<div class="container my-5 transparente">
+    <div class="row align-items-center">
+        <div class="col-lg-12 col-md-12 p-4">
+            <h2 class="display-5 fw-bold">Bienvenido!</h2>
+            <p class="lead">
+                La siguiente aplicacion demuestra lo aprendido respecto a pais, paginas dinamicas y localStorage.
+                Para el desarrollo de la pagina se utilizo <strong>JavaScript</strong>, <strong>getUserMedia</strong> y
+                la <strong>API de Geolocalización</strong>.
+                Mientras que los datos se almacenan de forma local mediante <strong>localStorage</strong>.
+            </p>
+            <ul class="list fs-5">
+                <li><i class="fas fa-users"></i> Nombre, Edad y Departamento</li>
+                <li><i class="fas fa-video"></i> Foto tomada con la cámara del navegador</li>
+                <li><i class="fas fa-compass"></i> Ubicación geográfica mediante GPS del navegador</li>
+                <li><i class="fas fa-cloud-arrow-up"></i> Almacenamiento de datos en localStorage</li>
+                <li><i class="fas fa-flag"></i> Pagina web dinamica</li>
+            </ul>
+        </div>
+
+
+    </div>
+</div>
+<hr class="w-100 border-top border-1 border-white">
+<div class="row transparente">
+
+    <div class="col-lg-12  d-none d-lg-block">
+
+        <h3>¡Tu residencia!</h3>
+        <div id="map" style="height: 300px;"></div>
+
+    </div>
+
+
+
+</div>
+
+<div class="container transparente2">
+<h4>Expositor de capturas</h4>
+<div class="d-flex flex-row gap-2">
+    <div style="flex: 1">
+        <img id="mainPreview" src="media/fallback.jpg" class="img-fluid border" alt="Principal">
+    </div>
+    <div style="width: 100px; display: flex; flex-direction: column; gap: 4px;" id="miniaturas"></div>
+</div>
+</div>
+
+<hr class="w-100 border-top border-1 border-white">
+<div class="container transparente">
+    <h3>Deja tu comentario</h3>
+    <br>
+    <textarea class="form-control" id="Comentario"
+        placeholder="Toca el botón para transcribir tu comentario :D"></textarea><br>
+    <button id="Grabador">🎤 Iniciar Transcripción</button>
+    <button id="EnviarComentario" class="btn btn-success mt-2 ms-2">💬 Enviar</button>
+</div>
+
+
+<hr>
+
+<div class="container transparente">
+    <h5 class="text-secondary ">Comentarios:</h5>
+    <div id="listaComentarios" class="mt-3"></div>
+</div>

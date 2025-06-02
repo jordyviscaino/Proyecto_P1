@@ -1,0 +1,82 @@
+<div class="container row transparente">
+  <br>
+  <div class="col-sm-8 col-md-8 col-lg-8 container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        <img src="media/ESPE.png" alt="" width="250" height="250" class="d-inline-block">
+      </div>
+      <div class="col-sm-12 col-md-9 col-lg-9">
+        <strong class="display-5 fw-bold text-white px-3">UNIVERSIDAD DE LAS FUERZAS ARMADAS</strong><br>
+        <h3>Proyecto: Mi Perfil Estudiantil - Grupo 2</h3>
+        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Ver mas informacion.
+        </button>
+
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <div class="d-flex justify-content-center">
+
+      <a href="https://www.facebook.com/JordyVis122003/" target="_blank">
+        <img src="media/fb.png" alt="Ir a otra página" width="100" height="100">
+      </a>
+      <a href="https://www.facebook.com/JordyVis122003/" target="_blank">
+        <img src="media/ig.png" alt="Ir a otra página" width="100" height="100">
+      </a>
+      <a href="https://open.spotify.com/user/22wp5vlcislcupoqqzbt7mroa?si=57a1f08e768840a2" target="_blank">
+        <img src="media/spotify.png" alt="Ir a otra página" width="100" height="100">
+      </a>
+      <br>
+      <button type="button" class="btn btn-white text-primary" data-bs-toggle="modal" data-bs-target="#modalQR">
+        📷 Compartir perfil
+      </button>
+
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" data-bs-keyboard="false"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-primary" id="exampleModalLabel">Ver mas..</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <p class="lead my-3 text-dark">
+
+          El proyecto consiste en una pequeña aplicación web de 3 páginas dinámicas que permiten a un estudiante crear y
+          ver su perfil personal, incluyendo su nombre, foto tomada con la cámara del navegador y ubicación de su
+          residencia (departamento).
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalQR" tabindex="-1" aria-labelledby="modalQRLabel" data-bs-keyboard="false"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-primary" id="modalQRLabel">Compartir perfil</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p class="lead my-3 text-dark">Escanea el código QR para ver el perfil.</p>
+        <img id="qrImage" src="" alt="Código QR" class="img-fluid">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

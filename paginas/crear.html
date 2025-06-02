@@ -1,0 +1,127 @@
+<div class="accordion" id="accordionUsuario">
+
+    <!-- Datos personales -->
+    <div class="accordion-item transparente">
+        <h2 class="accordion-header" id="headingDatos">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDatos"
+                aria-expanded="true" aria-controls="collapseDatos">
+                1. Datos personales
+            </button>
+        </h2>
+        <div id="collapseDatos" class="accordion-collapse collapse show" aria-labelledby="headingDatos"
+            data-bs-parent="#accordionUsuario">
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-md-6 py-2">
+                        <input type="text" class="form-control" placeholder="Nombre" id="nombre_completo"
+                            name="nombre_completo" required>
+                    </div>
+                    <div class="col-md-6 py-2">
+                        <input type="text" class="form-control" placeholder="Apellido" id="apellido_completo"
+                            name="apellido_completo" required>
+                    </div>
+                    <div class="col-md-3 py-2">
+                        <input type="date" class="form-control" placeholder="Edad" id="fecha_nacimiento"
+                            name="fecha_nacimiento" min="2000-01-01" max="2030-12-31" required>
+                    </div>
+
+
+                    <div class="col-md-9 py-2">
+                        <textarea id="descripcion_usuario" rows="4" cols="50" style="resize: none;"
+                            placeholder="Escribe algo sobre ti..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="facebook" class="form-label">Facebook</label>
+                        <input type="url" class="form-control" id="facebook"
+                            placeholder="https://facebook.com/tuPerfil">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="instagram" class="form-label">Instagram</label>
+                        <input type="url" class="form-control" id="instagram"
+                            placeholder="https://instagram.com/tuPerfil">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="spotify" class="form-label">Spotify</label>
+                        <input type="url" class="form-control" id="spotify"
+                            placeholder="https://open.spotify.com/tuPerfil">
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contacto -->
+    <div class="accordion-item transparente">
+        <h2 class="accordion-header" id="headingContacto">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseContacto" aria-expanded="false" aria-controls="collapseContacto">
+                2. Información de contacto
+            </button>
+        </h2>
+        <div id="collapseContacto" class="accordion-collapse collapse" aria-labelledby="headingContacto"
+            data-bs-parent="#accordionUsuario">
+            <div class="accordion-body">
+                <input type="email" class="form-control mb-3" placeholder="Correo electrónico" id="correo" name="correo"
+                    required>
+                <br>
+                <label for="carrera">Selecciona tu carrera:</label>
+                <select id="carrera">
+                    <option value="" disabled selected>Elige tu carrera</option>
+                    <option value="Software">Ingeniería en Software</option>
+                    <option value="Mecatronica">Mecatrónica</option>
+                    <option value="Biotecnologia">Biotecnología</option>
+                    <option value="Medicina">Medicina</option>
+                    <option value="Psicologia">Psicología</option>
+                    <option value="Educacion inicial">Educación Inicial</option>
+                    <option value="Tics">TICS</option>
+                </select>
+
+                <br>
+
+                <button type="button" class="btn btn-primary" onclick="obtenerUbicacion()">
+                    <i class="fas fa-location-dot"></i> Obtener ubicación
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Foto de perfil -->
+    <div class="accordion-item transparente">
+        <h2 class="accordion-header" id="headingFoto">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFoto" aria-expanded="false" aria-controls="collapseFoto">
+                3. Foto de perfil
+            </button>
+        </h2>
+        <div id="collapseFoto" class="accordion-collapse collapse" aria-labelledby="headingFoto"
+            data-bs-parent="#accordionUsuario">
+            <div class="accordion-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Este eres tú</h5>
+                        <video id="camara" width="250" height="200" autoplay controls></video><br>
+                        <button onclick="tomarFoto()" class="btn btn-primary mt-2"><i class="fas fa-camera-retro"></i>
+                            Tomar foto</button>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="text-center">Tu foto generada</h3>
+                        <canvas class="d-block mx-auto transparente3" id="foto_camara" width="250" height="200"
+                            style="display: none;"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Botones finales -->
+<div class="d-flex justify-content-center gap-3 py-4">
+    <button type="submit" class="btn btn-success" onclick="guardarCompletof()">Guardar</button>
+    <button onclick="eliminarUser_C()" type="button" class="btn btn-danger">Eliminar</button>
+    <button onclick="cargarPaginas('principal')" type="button"  class="btn btn-warning">Volver</button>
+</div>
